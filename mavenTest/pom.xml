@@ -1,0 +1,44 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>javio.mavenTest</groupId>
+	<artifactId>profile</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>set Maven profiles to selct different env properites</name>
+	<build>
+		<finalName>test</finalName>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+			<resource>
+				<directory>src/main/config</directory>
+			</resource>
+		</resources>
+	</build>
+	<profiles>
+		<profile>
+			<id>APC</id>
+			<build>
+				<resources>
+					<resource>
+						<directory>src/main/filters/APC</directory>
+						<filtering>true</filtering>
+					</resource>
+				</resources>
+			</build>
+		</profile>
+		<profile>
+			<id>HQ</id>
+			<build>
+				<resources>
+					<resource>
+						<directory>src/main/filters/HQ</directory>
+						<filtering>true</filtering>
+					</resource>
+				</resources>
+			</build>
+		</profile>
+	</profiles>
+</project>
